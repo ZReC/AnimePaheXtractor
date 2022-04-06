@@ -1,0 +1,5 @@
+node_modules
+build
+app/data/*
+!app/data/*.default.db3
+.vscode/settings.json

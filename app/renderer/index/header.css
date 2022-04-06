@@ -1,0 +1,108 @@
+:root {
+    /*triadic from #d5015b */
+    --CB0-h: 335;
+    --CB0-s: 99%;
+    --CB0-l: 42%;
+
+    --CB1-h: 189;
+    --CB1-s: 99%;
+    --CB1-l: 41%;
+
+    --CB2-h: 46;
+    --CB2-s: 99%;
+    --CB2-l: 41%;
+}
+
+header {
+    all: unset;
+    display: flex;
+    max-height: 2em;
+    justify-content: space-between;
+    height: 32px;
+    background-color: #0004;
+    -webkit-app-region: drag;
+}
+
+header .title {
+    font-family: 'Segoe UI';
+    padding: .25em;
+}
+
+header .title span {
+    font-family: serif;
+    margin-left: .4em;
+    color: hsl(var(--CB2-h), var(--CB2-s), calc(var(--CB2-l)*.8));
+}
+
+header .toggle {
+    all: unset;
+    width: 1em;
+    height: 100%;
+    padding-left: .5em;
+    padding-right: .5em;
+    color: white;
+    opacity: .5;
+    -webkit-app-region: none;
+    will-change: transform;
+    /*workaround visual glitch*/
+    transition: .25s;
+}
+
+header .toggle.home {
+    color: hsl(var(--CB1-h), var(--CB1-s), 50%);
+    margin-left: 1em;
+    margin-right: 1em;
+    transition: all .5s, padding .1s, width .3s, opacity .5s;
+}
+
+header .toggle:active {
+    opacity: 1;
+}
+
+header .toggle:hover {
+    transform: scale(1.1);
+    transition: transform .1s;
+    opacity: .75;
+}
+
+header .toggle.selected {
+    transform: scale(1.3);
+    opacity: 1;
+}
+
+header .controls {
+    all: unset;
+    color: #AAA;
+    -webkit-app-region: none;
+    text-align: center;
+    display: inline-block;
+    width: 1rem;
+    height: 100%;
+    padding: 0 8px 0 8px;
+    transition: 1000ms;
+}
+
+header .controls:hover {
+    color: #BBB;
+    background-color: hsl(var(--CB0-h), var(--CB0-s), calc(var(--CB0-l)*.5));
+    transition: 100ms;
+}
+
+header .controls:active {
+    color: #FFF;
+    background-color: hsl(var(--CB0-h), var(--CB0-s), calc(var(--CB0-l)*.8));
+    transition: 100ms;
+}
+
+.blush:before {
+    position: absolute;
+    transform: translateX(25%);
+    
+    content: "⁄  ⁄ ⁄ ⁄  ⁄";
+    color:#d5015bBB;
+}
+
+.blush:after {
+    content: "(  • ω •  )";
+    color:grey;
+}
