@@ -1,57 +1,57 @@
 {
-    "name": "animepahextractor",
-    "version": "1.0.0",
-    "description": "intended to manage cute video files",
-    "main": "main.js",
-    "scripts": {
-        "start": "electron .",
-        "debug": "electron . --dev",
-        "pack": "electron-builder --dir",
-        "dist": "electron-builder"
-    },
-    "repository": "AnimePaheXtractor",
-    "keywords": [
-        "anime",
-        "download",
-        "fun"
+  "name": "animepahextractor",
+  "version": "1.0.0",
+  "description": "intended to manage cute video files",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "debug": "electron . --dev",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "repository": "AnimePaheXtractor",
+  "keywords": [
+    "anime",
+    "download",
+    "fun"
+  ],
+  "author": "ZReC",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^17.1.0",
+    "electron-builder": "^22.14.13"
+  },
+  "build": {
+    "appId": "zrec.animepahextractor.app",
+    "artifactName": "setup-${version}.${ext}",
+    "extraFiles": [
+      "./data"
     ],
-    "author": "ZReC",
-    "license": "MIT",
-    "devDependencies": {
-        "electron": "^17.1.0",
-        "electron-builder": "^22.14.13"
+    "win": {
+      "target": [
+        "nsis"
+      ]
     },
-    "build": {
-        "appId": "zrec.animepahextractor.app",
-        "artifactName": "setup-${version}.${ext}",
-        "extraFiles": [
-            "./data"
-        ],
-        "win": {
-            "target": [
-                "nsis"
-            ]
-        },
-        "nsis": {
-            "oneClick": false,
-            "license": "../license.md",
-            "allowToChangeInstallationDirectory": true
-        },
-        "directories": {
-            "output": "../build",
-            "buildResources": "data"
-        },
-        "publish": {
-            "provider": "generic",
-            "url": "http://[::0]/ignore",
-            "channel": "latest"
-        }
+    "nsis": {
+      "oneClick": false,
+      "license": "../license.md",
+      "allowToChangeInstallationDirectory": true
     },
-    "dependencies": {
-        "electron-updater": "^4.6.5",
-        "ffmpeg-static": "^4.4.1",
-        "fluent-ffmpeg": "^2.1.2",
-        "sqlite": "^4.0.23",
-        "sqlite3": "^5.0.2"
+    "directories": {
+      "output": "../build",
+      "buildResources": "data"
+    },
+    "publish": {
+      "provider": "generic",
+      "url": "http://[::0]/ignore",
+      "channel": "latest"
     }
+  },
+  "dependencies": {
+    "electron-updater": "^4.6.5",
+    "ffmpeg-static": "^4.4.1",
+    "fluent-ffmpeg": "^2.1.2",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.0.2"
+  }
 }

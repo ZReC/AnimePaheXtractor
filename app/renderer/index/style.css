@@ -1,1041 +1,1041 @@
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
 }
 
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *, *:before, *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 html, body {
-    all: unset;
-    height: 100%;
-    margin: 0;
+  all: unset;
+  height: 100%;
+  margin: 0;
 }
 
 :root {
-    --base-color-h: 335;
-    --base-color-s: 99%;
-    --base-color-l: 42%;
-    background: #111;
-    color: white;
-    font-size: 16px;
-    /* #d5015b */
+  --base-color-h: 335;
+  --base-color-s: 99%;
+  --base-color-l: 42%;
+  background: #111;
+  color: white;
+  font-size: 16px;
+  /* #d5015b */
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    user-select: none;
-    overflow: hidden;
-    font-family: 'Segoe UI';
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  overflow: hidden;
+  font-family: 'Segoe UI';
 }
 
 main {
-    position: relative;
-    height: 100%;
-    overflow: hidden;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
 }
 
 #homeTab {
-    all: unset;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    overflow-y: hidden;
-    opacity: 0;
-    transition: .2s ease-out;
-    transition-property: top, opacity;
+  all: unset;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow-y: hidden;
+  opacity: 0;
+  transition: .2s ease-out;
+  transition-property: top, opacity;
 }
 
 #homeTab .principal {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 #homeTab .principal .updater {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 #homeTab .principal .updater .result {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
 }
 
 #homeTab .principal .updater .result.show {
-    opacity: 1;
-    pointer-events: inherit;
+  opacity: 1;
+  pointer-events: inherit;
 }
 
 #homeTab .principal .updater .result .button {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    padding: .5em;
-    background-color: dimgrey;
-    border-radius: .4em;
-    text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: .5em;
+  background-color: dimgrey;
+  border-radius: .4em;
+  text-align: center;
 }
 
 #homeTab .principal .updater .result .button .bg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: hsl(var(--base-color-h), var(--base-color-s), calc(var(--base-color-l)*.5));
-    transition: background .2s ease, width .2s ease;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: hsl(var(--base-color-h), var(--base-color-s), calc(var(--base-color-l)*.5));
+  transition: background .2s ease, width .2s ease;
 }
 
 #homeTab .principal .updater .result .button .text {
-    position: relative;
-    pointer-events: none;
+  position: relative;
+  pointer-events: none;
 }
 
 #homeTab .principal .updater .result .button .bg:hover {
-    background-color: hsl(var(--base-color-h), var(--base-color-s), calc(var(--base-color-l)*.75));
+  background-color: hsl(var(--base-color-h), var(--base-color-s), calc(var(--base-color-l)*.75));
 }
 
 #homeTab .principal .updater .result .button .bg:active {
-    background-color: hsl(var(--base-color-h), var(--base-color-s), var(--base-color-l));
+  background-color: hsl(var(--base-color-h), var(--base-color-s), var(--base-color-l));
 }
 
 #homeTab .principal .updater .check {
-    opacity: 0;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10em;
-    pointer-events: none;
-    transition: opacity .2s ease, gap .2s ease;
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10em;
+  pointer-events: none;
+  transition: opacity .2s ease, gap .2s ease;
 }
 
 #homeTab .principal .updater .check.show {
-    opacity: 1;
-    gap: 1em;
+  opacity: 1;
+  gap: 1em;
 }
 
 #homeTab .status-bar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    justify-content: flex-end;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 #homeTab .status-bar .placeholder {
-    height: 100%;
+  height: 100%;
 }
 
 #homeTab .status-bar .github-link {
-    color: #777;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    gap: .25em;
-    margin: .5em;
-    transition: color .1s ease;
+  color: #777;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: .25em;
+  margin: .5em;
+  transition: color .1s ease;
 }
 
 #homeTab .status-bar .github-link:hover {
-    color: #FFF;
-    cursor: pointer;
+  color: #FFF;
+  cursor: pointer;
 }
 
 #homeTab .status-bar .github-link .logo {
-    height: 1.2em;
+  height: 1.2em;
 }
 
 #homeTab .status-bar .github-link .repo {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 #searchTab {
-    all: unset;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    overflow-y: hidden;
-    opacity: 0;
-    transition: .2s ease-out;
-    transition-property: top, opacity;
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow-y: hidden;
+  opacity: 0;
+  transition: .2s ease-out;
+  transition-property: top, opacity;
 }
 
 .search-results {
-    overflow-y: overlay;
-    padding-bottom: 1em;
+  overflow-y: overlay;
+  padding-bottom: 1em;
 }
 
 .search-results:empty+.no-search-results {
-    height: auto;
-    visibility: inherit;
-    opacity: 1;
-    transition: 1000ms;
+  height: auto;
+  visibility: inherit;
+  opacity: 1;
+  transition: 1000ms;
 }
 
 .no-search-results {
-    text-align: center;
-    height: 0%;
-    visibility: hidden;
-    opacity: 0;
+  text-align: center;
+  height: 0%;
+  visibility: hidden;
+  opacity: 0;
 }
 
 /* search-result related */
 
 .search-result {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .2);
-    border-radius: 6px;
-    overflow: hidden;
-    transition: .5s;
-    /*hidden by default*/
-    margin: 0 .4rem 0 .4rem;
-    max-height: 0;
-    pointer-events: none;
-    opacity: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .2);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: .5s;
+  /*hidden by default*/
+  margin: 0 .4rem 0 .4rem;
+  max-height: 0;
+  pointer-events: none;
+  opacity: 0;
 }
 
 .search-result.show {
-    margin-top: .2rem;
-    margin-bottom: .2rem;
-    max-height: 100%;
-    opacity: 1;
-    pointer-events: inherit;
+  margin-top: .2rem;
+  margin-bottom: .2rem;
+  max-height: 100%;
+  opacity: 1;
+  pointer-events: inherit;
 }
 
 .search-result .arrow::before {
-    content: "\25B6";
-    color: #fff6;
-    display: inline-block;
-    margin-right: 6px;
-    transition: .2s;
+  content: "\25B6";
+  color: #fff6;
+  display: inline-block;
+  margin-right: 6px;
+  transition: .2s;
 }
 
 .search-result .arrow {
-    flex-grow: 1;
-    padding: .25rem;
-    cursor: pointer;
-    will-change: transform;
+  flex-grow: 1;
+  padding: .25rem;
+  cursor: pointer;
+  will-change: transform;
 }
 
 .search-result .arrow.down::before {
-    transition: .2s;
-    transform: rotate(90deg);
+  transition: .2s;
+  transform: rotate(90deg);
 }
 
 .search-result button {
-    margin: .25rem;
-    margin-left: 0;
-    font-size: 12px;
-    padding: 0 .2rem 0 .2rem;
-    border-radius: .3rem;
-    background-color: #0004;
-    color: #fff8;
-    transition: 100ms;
+  margin: .25rem;
+  margin-left: 0;
+  font-size: 12px;
+  padding: 0 .2rem 0 .2rem;
+  border-radius: .3rem;
+  background-color: #0004;
+  color: #fff8;
+  transition: 100ms;
 }
 
 .search-result button:hover {
-    color: #fffE;
+  color: #fffE;
 }
 
 .search-result button:active {
-    color: #fffE;
-    background-color: #000A;
+  color: #fffE;
+  background-color: #000A;
 }
 
 .search-result .nested {
-    width: 100%;
-    height: auto;
-    list-style: none;
-    overflow: hidden;
-    transition: height .2s ease-out;
-    padding-left: 2em;
-    padding-right: 2em;
+  width: 100%;
+  height: auto;
+  list-style: none;
+  overflow: hidden;
+  transition: height .2s ease-out;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
 .search-result .nested .result {
-    display: flex;
-    justify-content: space-between;
-    border-radius: 8px;
-    margin: 2px 0 4px 0;
-    padding: 4px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+  margin: 2px 0 4px 0;
+  padding: 4px;
 }
 
 .search-result .nested .result:hover {
-    background-color: #AAA3;
+  background-color: #AAA3;
 }
 
 .search-result .nested .result .title {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin-right: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: 16px;
 }
 
 .search-result .nested .result .info {
-    font-style: italic;
-    color: #AAAA;
-    flex-shrink: 0;
-    overflow: hidden;
-    white-space: nowrap;
+  font-style: italic;
+  color: #AAAA;
+  flex-shrink: 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 /* search-bar related */
 
 .search-bar {
-    position: relative;
-    display: flex;
+  position: relative;
+  display: flex;
 }
 
 .search-bar.disabled {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 .search-bar .input {
-    all: unset;
-    width: 100%;
-    font-size: 1.3em;
-    white-space: nowrap;
-    padding: .25em;
-    padding-left: .5em;
-    padding-right: calc(100% - .5em);
-    outline: 2px solid hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .2);
-    outline-offset: -2px;
-    border-top-left-radius: .4em;
-    border-top-right-radius: .4em;
-    color: #ddd;
-    text-align: center;
-    overflow: hidden;
-    transition-duration: 1s;
-    animation: inputPointerEvents .5s linear;
+  all: unset;
+  width: 100%;
+  font-size: 1.3em;
+  white-space: nowrap;
+  padding: .25em;
+  padding-left: .5em;
+  padding-right: calc(100% - .5em);
+  outline: 2px solid hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .2);
+  outline-offset: -2px;
+  border-top-left-radius: .4em;
+  border-top-right-radius: .4em;
+  color: #ddd;
+  text-align: center;
+  overflow: hidden;
+  transition-duration: 1s;
+  animation: inputPointerEvents .5s linear;
 }
 
 @keyframes inputPointerEvents {
-    0%, 100% {
-        pointer-events: none
-    }
+  0%, 100% {
+    pointer-events: none
+  }
 }
 
 .search-bar .input:empty:not(:focus):before {
-    content: attr(data-placeholder);
-    color: grey;
+  content: attr(data-placeholder);
+  color: grey;
 }
 
 .search-bar .input:hover {
-    outline-color: hsl(var(--base-color-h), var(--base-color-s), calc(var(--base-color-l) / 3));
-    transition: all 1s;
+  outline-color: hsl(var(--base-color-h), var(--base-color-s), calc(var(--base-color-l) / 3));
+  transition: all 1s;
 }
 
 .search-bar .input:focus {
-    outline-color: hsl(var(--base-color-h), var(--base-color-s), calc(var(--base-color-l) / 2));
-    transition: all 1s, outline-color .1s;
+  outline-color: hsl(var(--base-color-h), var(--base-color-s), calc(var(--base-color-l) / 2));
+  transition: all 1s, outline-color .1s;
 }
 
 .search-bar.disabled .input {
-    outline-color: transparent;
-    padding-right: .5em;
-    animation: none;
+  outline-color: transparent;
+  padding-right: .5em;
+  animation: none;
 }
 
 .search-bar .btn {
-    color: #444;
-    position: absolute;
-    width: 1.5em;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    padding: .5em;
-    transition: 1s;
+  color: #444;
+  position: absolute;
+  width: 1.5em;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  padding: .5em;
+  transition: 1s;
 }
 
 .search-bar .btn:hover {
-    color: #BBB;
-    transition: 100ms;
+  color: #BBB;
+  transition: 100ms;
 }
 
 .search-bar .btn:active {
-    color: #EEE;
-    transition: 100ms;
+  color: #EEE;
+  transition: 100ms;
 }
 
 .search-bar.disabled .search-bar .btn {
-    opacity: 0;
-    transition-duration: 500ms;
+  opacity: 0;
+  transition-duration: 500ms;
 }
 
 .search-bar .loading {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    margin: .5em;
-    opacity: 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: .5em;
+  opacity: 0;
 }
 
 .search-bar.disabled .loading {
-    opacity: 1;
+  opacity: 1;
 }
 
 /*extract dialog, halfway*/
 
 #extractDialog {
-    all: unset;
-    position: absolute;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    transition: .25s ease-out;
-    /*hidden by default*/
-    display: flex;
-    pointer-events: none;
-    opacity: 0;
-    /*to perform blend-mode properly*/
-    isolation: isolate;
-    /*above everything else*/
-    z-index: 10;
+  all: unset;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  transition: .25s ease-out;
+  /*hidden by default*/
+  display: flex;
+  pointer-events: none;
+  opacity: 0;
+  /*to perform blend-mode properly*/
+  isolation: isolate;
+  /*above everything else*/
+  z-index: 10;
 }
 
 #extractDialog.show {
-    pointer-events: inherit;
-    opacity: 1;
+  pointer-events: inherit;
+  opacity: 1;
 }
 
 #extractDialog .background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #000B;
-    z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000B;
+  z-index: -1;
 }
 
 #extractDialog .title {
-    text-align: center;
-    width: 100%;
-    margin-top: 1rem;
-    padding: 0 1rem .2rem 1rem;
-    font-size: 42px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    flex-shrink: 0;
-    pointer-events: none;
+  text-align: center;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0 1rem .2rem 1rem;
+  font-size: 42px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+  pointer-events: none;
 }
 
 #extractDialog .title span:hover {
-    transform: translateX(calc(-100% + 23ch));
-    /*add parent width*/
-    transition-delay: 0s;
+  transform: translateX(calc(-100% + 23ch));
+  /*add parent width*/
+  transition-delay: 0s;
 }
 
 #extractDialog .poster {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1rem;
-    margin: 1rem;
-    width: 32rem;
-    height: 100%;
-    max-height: 32rem;
-    background-blend-mode: multiply;
-    background-color: #000;
-    /*bg-img not visible*/
-    background-size: 105%;
-    background-position: center;
-    border-radius: 8px;
-    transition: background-color 0s;
-    animation: none;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem;
+  width: 32rem;
+  height: 100%;
+  max-height: 32rem;
+  background-blend-mode: multiply;
+  background-color: #000;
+  /*bg-img not visible*/
+  background-size: 105%;
+  background-position: center;
+  border-radius: 8px;
+  transition: background-color 0s;
+  animation: none;
 }
 
 #extractDialog .poster.show {
-    animation: posterVerticalPanning 15s ease-in-out infinite alternate;
+  animation: posterVerticalPanning 15s ease-in-out infinite alternate;
 }
 
 @keyframes posterVerticalPanning {
-    from {
-        background-position-y: 2%
-    }
+  from {
+    background-position-y: 2%
+  }
 
-    to {
-        background-position-y: 98%
-    }
+  to {
+    background-position-y: 98%
+  }
 }
 
 #extractDialog .poster.show:hover {
-    background-color: #555 !important;
-    transition: background-color 1s !important;
+  background-color: #555 !important;
+  transition: background-color 1s !important;
 }
 
 #extractDialog .poster.show {
-    background-color: #333;
-    transition: background-color 1s;
+  background-color: #333;
+  transition: background-color 1s;
 }
 
 #extractDialog .poster.not-found {
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0yOTEuNTMgMjczLjgwNWMxMi4wNSAwIDIxLjgyIDkuNzcgMjEuODIgMjEuODIgMCAxMi4wNS05Ljc3IDIxLjgyLTIxLjgyIDIxLjgyLTEyLjA1IDAtMjEuODItOS43Ny0yMS44Mi0yMS44MkMyNjkuNzEgMjgzLjU3NSAyNzkuNDggMjczLjgwNSAyOTEuNTMgMjczLjgwNUwyOTEuNTMgMjczLjgwNXpNMjA2LjQ4IDE5NC41NTVoOTUuMjhjMi4xNyAwIDQuMTEuODkgNS41MyAyLjMgMS40MiAxLjQyIDIuMyAzLjM5IDIuMyA1LjUzdjcwLjAxYy0yLjQ2LTEuOTEtNS4yNC0zLjQ0LTguMjUtNC40OFYyMDQuMjg1YzAtLjQzLS4xNi0uNzktLjQ2LTEuMDUtLjI2LS4yNi0uNjYtLjQ2LTEuMDUtLjQ2SDIwOC4zNGMtLjQzIDAtLjc5LjE2LTEuMDUuNDZDMjA3LjAzIDIwMy40OTUgMjA2LjgzIDIwMy44ODUgMjA2LjgzIDIwNC4yODV2NzAuMDJoLjAzbDMxLjk3LTMwLjYxYzEuMjgtMS4xOCAzLjI5LTEuMDUgNC40NC4yMyAuMDMuMDMgLjAzLjA3IC4wNy4wN2wyNi44OCAzMS44Yy00LjczIDUuMTgtNy42MiAxMi4wOC03LjYyIDE5LjY1IDAgMy4yOS41NSA2LjQ1IDEuNTUgOS40SDIwNi40OGMtMi4xNyAwLTQuMTEtLjg5LTUuNTMtMi4zcy0yLjMtMy4zOS0yLjMtNS41M1YyMDIuMzg1YzAtMi4xNy44OS00LjExIDIuMy01LjUzUzIwNC4zNCAxOTQuNTU1IDIwNi40OCAxOTQuNTU1TDIwNi40OCAxOTQuNTU1ek0yNzIuMzggMjczLjY1NWwzLjcxLTIyLjc5Yy4zLTEuNzEgMS45MS0yLjkgMy42Mi0yLjYuNjYgLjEgMS4yNS40MyAxLjcxLjg2bDE3LjEgMTcuOTdjLTIuMTgtLjUyLTQuNDQtLjc5LTYuNzgtLjc5QzI4NC4zMSAyNjYuMjk1IDI3Ny41MyAyNjkuMDc1IDI3Mi4zOCAyNzMuNjU1TDI3Mi4zOCAyNzMuNjU1ek0yODAuMzggMjEyLjQ5NWMzLjEzIDAgNS45OSAxLjI4IDguMDMgMy4zMiAyLjA3IDIuMDcgMy4zMiA0LjkgMy4zMiA4LjAzIDAgMy4xMy0xLjI4IDUuOTktMy4zMiA4LjAzLTIuMDcgMi4wNy00LjkgMy4zMi04LjAzIDMuMzItMy4xMyAwLTUuOTktMS4yOC04LjAzLTMuMzItMi4wNy0yLjA3LTMuMzItNC45LTMuMzItOC4wMyAwLTMuMTMgMS4yOC01Ljk5IDMuMzItOC4wM0MyNzQuNDIgMjEzLjc0NSAyNzcuMjYgMjEyLjQ5NSAyODAuMzggMjEyLjQ5NUwyODAuMzggMjEyLjQ5NXpNMjg0LjIyIDI4Mi4zNTVsMTkuOTYgMjEuNmMxLjU4LTIuMzkgMi41LTUuMjUgMi41LTguMzMgMC04LjM2LTYuNzgtMTUuMTQtMTUuMTQtMTUuMTRDMjg4Ljg4IDI4MC40NzUgMjg2LjM5IDI4MS4xNTUgMjg0LjIyIDI4Mi4zNTVMMjg0LjIyIDI4Mi4zNTV6TTI5OC44NCAzMDguODg1bC0xOS45Ni0yMS42Yy0xLjU4IDIuMzktMi41IDUuMjUtMi41IDguMzMgMCA4LjM2IDYuNzggMTUuMTQgMTUuMTQgMTUuMTRDMjk0LjE4IDMxMC43NjUgMjk2LjY3IDMxMC4wODUgMjk4Ljg0IDMwOC44ODVMMjk4Ljg0IDMwOC44ODV6Ij48L3BhdGg+PC9zdmc+");
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
-    background-color: #111;
-    transition: background 1s;
-    animation: none;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0yOTEuNTMgMjczLjgwNWMxMi4wNSAwIDIxLjgyIDkuNzcgMjEuODIgMjEuODIgMCAxMi4wNS05Ljc3IDIxLjgyLTIxLjgyIDIxLjgyLTEyLjA1IDAtMjEuODItOS43Ny0yMS44Mi0yMS44MkMyNjkuNzEgMjgzLjU3NSAyNzkuNDggMjczLjgwNSAyOTEuNTMgMjczLjgwNUwyOTEuNTMgMjczLjgwNXpNMjA2LjQ4IDE5NC41NTVoOTUuMjhjMi4xNyAwIDQuMTEuODkgNS41MyAyLjMgMS40MiAxLjQyIDIuMyAzLjM5IDIuMyA1LjUzdjcwLjAxYy0yLjQ2LTEuOTEtNS4yNC0zLjQ0LTguMjUtNC40OFYyMDQuMjg1YzAtLjQzLS4xNi0uNzktLjQ2LTEuMDUtLjI2LS4yNi0uNjYtLjQ2LTEuMDUtLjQ2SDIwOC4zNGMtLjQzIDAtLjc5LjE2LTEuMDUuNDZDMjA3LjAzIDIwMy40OTUgMjA2LjgzIDIwMy44ODUgMjA2LjgzIDIwNC4yODV2NzAuMDJoLjAzbDMxLjk3LTMwLjYxYzEuMjgtMS4xOCAzLjI5LTEuMDUgNC40NC4yMyAuMDMuMDMgLjAzLjA3IC4wNy4wN2wyNi44OCAzMS44Yy00LjczIDUuMTgtNy42MiAxMi4wOC03LjYyIDE5LjY1IDAgMy4yOS41NSA2LjQ1IDEuNTUgOS40SDIwNi40OGMtMi4xNyAwLTQuMTEtLjg5LTUuNTMtMi4zcy0yLjMtMy4zOS0yLjMtNS41M1YyMDIuMzg1YzAtMi4xNy44OS00LjExIDIuMy01LjUzUzIwNC4zNCAxOTQuNTU1IDIwNi40OCAxOTQuNTU1TDIwNi40OCAxOTQuNTU1ek0yNzIuMzggMjczLjY1NWwzLjcxLTIyLjc5Yy4zLTEuNzEgMS45MS0yLjkgMy42Mi0yLjYuNjYgLjEgMS4yNS40MyAxLjcxLjg2bDE3LjEgMTcuOTdjLTIuMTgtLjUyLTQuNDQtLjc5LTYuNzgtLjc5QzI4NC4zMSAyNjYuMjk1IDI3Ny41MyAyNjkuMDc1IDI3Mi4zOCAyNzMuNjU1TDI3Mi4zOCAyNzMuNjU1ek0yODAuMzggMjEyLjQ5NWMzLjEzIDAgNS45OSAxLjI4IDguMDMgMy4zMiAyLjA3IDIuMDcgMy4zMiA0LjkgMy4zMiA4LjAzIDAgMy4xMy0xLjI4IDUuOTktMy4zMiA4LjAzLTIuMDcgMi4wNy00LjkgMy4zMi04LjAzIDMuMzItMy4xMyAwLTUuOTktMS4yOC04LjAzLTMuMzItMi4wNy0yLjA3LTMuMzItNC45LTMuMzItOC4wMyAwLTMuMTMgMS4yOC01Ljk5IDMuMzItOC4wM0MyNzQuNDIgMjEzLjc0NSAyNzcuMjYgMjEyLjQ5NSAyODAuMzggMjEyLjQ5NUwyODAuMzggMjEyLjQ5NXpNMjg0LjIyIDI4Mi4zNTVsMTkuOTYgMjEuNmMxLjU4LTIuMzkgMi41LTUuMjUgMi41LTguMzMgMC04LjM2LTYuNzgtMTUuMTQtMTUuMTQtMTUuMTRDMjg4Ljg4IDI4MC40NzUgMjg2LjM5IDI4MS4xNTUgMjg0LjIyIDI4Mi4zNTVMMjg0LjIyIDI4Mi4zNTV6TTI5OC44NCAzMDguODg1bC0xOS45Ni0yMS42Yy0xLjU4IDIuMzktMi41IDUuMjUtMi41IDguMzMgMCA4LjM2IDYuNzggMTUuMTQgMTUuMTQgMTUuMTRDMjk0LjE4IDMxMC43NjUgMjk2LjY3IDMxMC4wODUgMjk4Ljg0IDMwOC44ODVMMjk4Ljg0IDMwOC44ODV6Ij48L3BhdGg+PC9zdmc+");
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-color: #111;
+  transition: background 1s;
+  animation: none;
 }
 
 #extractDialog .details {
-    text-align: left;
-    color: #FFFA;
+  text-align: left;
+  color: #FFFA;
 }
 
 #extractDialog .loading {
-    position: absolute;
-    align-self: center;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    height: 4rem;
-    width: 4rem;
-    border-width: .1rem;
-    animation-duration: 10s;
+  position: absolute;
+  align-self: center;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 4rem;
+  width: 4rem;
+  border-width: .1rem;
+  animation-duration: 10s;
 }
 
 #extractDialog .extract-options {
-    position: absolute;
-    bottom: 2rem;
-    left: 0;
-    right: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-end;
-    padding: inherit;
-    width: 100%;
-    opacity: 0;
-    transition: 0s;
-    pointer-events: none;
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: inherit;
+  width: 100%;
+  opacity: 0;
+  transition: 0s;
+  pointer-events: none;
 }
 
 #extractDialog .extract-options.show {
-    transition: .5s;
-    bottom: 0;
-    pointer-events: inherit;
-    opacity: 1;
+  transition: .5s;
+  bottom: 0;
+  pointer-events: inherit;
+  opacity: 1;
 }
 
 #extractDialog .extract-options .hint-text {
-    margin-bottom: .5rem;
-    text-align: center;
+  margin-bottom: .5rem;
+  text-align: center;
 }
 
 #extractDialog .extract-options .options {
-    display: flex;
-    align-items: flex-end;
-    flex-direction: row;
-    flex-grow: 1;
-    justify-content: center;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: center;
 }
 
 #extractDialog .extract-options .range-wrapper {
-    display: flex;
-    flex-direction: column;
-    flex-grow: .8;
-    margin-left: .25em;
-    margin-right: 2em;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: .8;
+  margin-left: .25em;
+  margin-right: 2em;
+  align-items: center;
 }
 
 #extractDialog .extract-options .range {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #extractDialog .extract-options .range .hyphen {
-    background-color: white;
-    margin: .2em;
-    width: .4em;
-    height: .1em;
+  background-color: white;
+  margin: .2em;
+  width: .4em;
+  height: .1em;
 }
 
 #extractDialog .extract-options .range .limit {
-    all: unset;
-    background-color: #0008;
-    border-radius: .25rem;
-    padding: .6rem;
-    width: 3rem;
-    height: 1em;
-    text-align: center;
-    transition: 250ms;
+  all: unset;
+  background-color: #0008;
+  border-radius: .25rem;
+  padding: .6rem;
+  width: 3rem;
+  height: 1em;
+  text-align: center;
+  transition: 250ms;
 }
 
 #extractDialog .extract-options .range .limit::-webkit-outer-spin-button, #extractDialog .extract-options .limit::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 #extractDialog .extract-options .range .limit.ok {
-    background-color: #1F18;
+  background-color: #1F18;
 }
 
 #extractDialog .extract-options .range .limit.err {
-    background-color: #F118;
+  background-color: #F118;
 }
 
 #extractDialog .extract-options .option-wrapper {
-    display: flex;
-    flex-direction: column;
-    flex-grow: .75;
-    margin-left: .25em;
-    margin-right: .25em;
+  display: flex;
+  flex-direction: column;
+  flex-grow: .75;
+  margin-left: .25em;
+  margin-right: .25em;
 }
 
 #extractDialog .extract-options .dropdown {
-    display: flex;
-    flex-direction: column-reverse;
-    box-sizing: content-box;
-    overflow: hidden;
-    width: 100%;
-    max-height: 9em;
-    border-radius: .25em;
-    background-color: #0008;
-    transition: all .5s, overflow .5s;
+  display: flex;
+  flex-direction: column-reverse;
+  box-sizing: content-box;
+  overflow: hidden;
+  width: 100%;
+  max-height: 9em;
+  border-radius: .25em;
+  background-color: #0008;
+  transition: all .5s, overflow .5s;
 }
 
 #extractDialog .extract-options .dropdown.deploy {
-    overflow-y: overlay;
-    background-color: hsl(var(--base-color-h), var(--base-color-s), calc(var(--base-color-l)*.5));
+  overflow-y: overlay;
+  background-color: hsl(var(--base-color-h), var(--base-color-s), calc(var(--base-color-l)*.5));
 }
 
 #extractDialog .extract-options .dropdown .item {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    opacity: 0;
-    height: 0;
-    line-height: 1em;
-    padding-left: .6em;
-    padding-right: .6em;
-    text-align: center;
-    overflow-x: clip;
-    pointer-events: none;
-    transition: all .5s, opacity .25s, pointer-events 0s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  opacity: 0;
+  height: 0;
+  line-height: 1em;
+  padding-left: .6em;
+  padding-right: .6em;
+  text-align: center;
+  overflow-x: clip;
+  pointer-events: none;
+  transition: all .5s, opacity .25s, pointer-events 0s;
 }
 
 #extractDialog .extract-options .dropdown.deploy .item:hover {
-    background-color: hsl(var(--base-color-h), var(--base-color-s), calc(var(--base-color-l)*.75));
+  background-color: hsl(var(--base-color-h), var(--base-color-s), calc(var(--base-color-l)*.75));
 }
 
 #extractDialog .extract-options .dropdown .item.selected {
-    padding-top: .6em;
-    padding-bottom: .6em;
-    opacity: 1;
-    height: 1em;
+  padding-top: .6em;
+  padding-bottom: .6em;
+  opacity: 1;
+  height: 1em;
 }
 
 #extractDialog .extract-options .dropdown.deploy .item {
-    opacity: 1;
-    height: 1em;
-    padding-top: .6em;
-    padding-bottom: .6em;
-    pointer-events: inherit;
-    transition: all .25s, opacity .1s;
+  opacity: 1;
+  height: 1em;
+  padding-top: .6em;
+  padding-bottom: .6em;
+  pointer-events: inherit;
+  transition: all .25s, opacity .1s;
 }
 
 #extractDialog .fetch-loading {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    width: 2rem;
-    height: 2rem;
-    border-width: .2rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 2rem;
+  height: 2rem;
+  border-width: .2rem;
 }
 
 #extractDialog .btn-fetch-details {
-    position: relative;
-    bottom: 2rem;
-    opacity: 0;
-    display: block;
-    pointer-events: none;
+  position: relative;
+  bottom: 2rem;
+  opacity: 0;
+  display: block;
+  pointer-events: none;
 }
 
 #extractDialog .buttons {
-    text-align: center;
-    height: 2.5rem;
-    width: 100%;
-    margin-top: 1rem;
-    padding: .5rem;
-    color: #ddd;
-    background-color: hsla(var(--base-color-h), calc(var(--base-color-s) / 4), var(--base-color-l), .4);
-    border-radius: 8px;
-    transition: 250ms;
+  text-align: center;
+  height: 2.5rem;
+  width: 100%;
+  margin-top: 1rem;
+  padding: .5rem;
+  color: #ddd;
+  background-color: hsla(var(--base-color-h), calc(var(--base-color-s) / 4), var(--base-color-l), .4);
+  border-radius: 8px;
+  transition: 250ms;
 }
 
 #extractDialog .buttons:hover {
-    background-color: hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .4);
-    transition: 100ms;
+  background-color: hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .4);
+  transition: 100ms;
 }
 
 #extractDialog .buttons:active {
-    background-color: hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .6);
-    transition: 100ms;
+  background-color: hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .6);
+  transition: 100ms;
 }
 
 #extractDialog .btn-fetch-details.show {
-    bottom: 0;
-    opacity: 1;
-    pointer-events: inherit;
+  bottom: 0;
+  opacity: 1;
+  pointer-events: inherit;
 }
 
 /* extract */
 
 #extractTab {
-    all: unset;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    overflow-y: hidden;
-    opacity: 0;
-    transition: .2s ease-out;
-    transition-property: top, opacity;
+  all: unset;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow-y: hidden;
+  opacity: 0;
+  transition: .2s ease-out;
+  transition-property: top, opacity;
 }
 
 #extractTab>.empty-queue {
-    display: flex;
-    position: absolute;
-    top: 0;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    justify-content: center;
-    pointer-events: none;
-    opacity: 0;
-    transition: 1s;
+  display: flex;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: 1s;
 }
 
 #extractTab>.queue:empty~.empty-queue {
-    opacity: 1;
+  opacity: 1;
 }
 
 #extractTab>.queue {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow-y: overlay;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: overlay;
 }
 
 #extractTab>.queue .item {
-    position: relative;
-    overflow: hidden;
-    opacity: 0;
-    padding-left: .5em;
-    padding-right: .5em;
-    flex-direction: column;
-    align-items: center;
-    clip-path: inset(.2em .5em .2em .5em round .6em);
-    transform: scale(0);
-    transition: opacity .25s ease-out, transform .25s ease, padding .25s ease, clip-path .25s ease;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  padding-left: .5em;
+  padding-right: .5em;
+  flex-direction: column;
+  align-items: center;
+  clip-path: inset(.2em .5em .2em .5em round .6em);
+  transform: scale(0);
+  transition: opacity .25s ease-out, transform .25s ease, padding .25s ease, clip-path .25s ease;
 }
 
 #extractTab>.queue .item.show {
-    padding-top: .2em;
-    padding-bottom: .2em;
-    opacity: 1;
-    transform: scale(1);
+  padding-top: .2em;
+  padding-bottom: .2em;
+  opacity: 1;
+  transform: scale(1);
 }
 
 #extractTab>.queue .item:hover {
-    clip-path: inset(0 0 0 0 round 0);
-    padding: 0;
+  clip-path: inset(0 0 0 0 round 0);
+  padding: 0;
 }
 
 #extractTab>.queue .item .info {
-    display: flex;
-    position: relative;
-    text-shadow: 0 0 0.3em black;
-    flex-grow: 0;
-    gap: 0;
-    flex-direction: column;
-    justify-content: flex-start;
-    transition: height .25s ease, gap .25s ease;
+  display: flex;
+  position: relative;
+  text-shadow: 0 0 0.3em black;
+  flex-grow: 0;
+  gap: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: height .25s ease, gap .25s ease;
 }
 
 #extractTab>.queue .item.show:hover .info {
-    gap: .5em;
+  gap: .5em;
 }
 
 #extractTab>.queue .item .info .progress {
-    height: .5em;
-    width: 100%;
-    background-color: #0003;
-    transition: margin .25s ease, height .25s ease, padding-top .25s ease;
+  height: .5em;
+  width: 100%;
+  background-color: #0003;
+  transition: margin .25s ease, height .25s ease, padding-top .25s ease;
 }
 
 #extractTab>.queue .item .info .progress div {
-    height: inherit;
-    width: 100%;
-    background-color: hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .5);
-    box-shadow: 0 0px 0.2em black;
-    transition: width 1s ease;
+  height: inherit;
+  width: 100%;
+  background-color: hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .5);
+  box-shadow: 0 0px 0.2em black;
+  transition: width 1s ease;
 }
 
 #extractTab>.queue .item:hover .info .progress {
-    height: 1em;
+  height: 1em;
 }
 
 #extractTab>.queue .item .info .details {
-    box-sizing: border-box;
-    display: flex;
-    flex-shrink: 0;
-    flex-basis: auto;
-    height: 4em;
-    width: 100%;
-    padding-left: .5em;
-    padding-right: .5em;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1em;
-    transition: height .25s ease;
+  box-sizing: border-box;
+  display: flex;
+  flex-shrink: 0;
+  flex-basis: auto;
+  height: 4em;
+  width: 100%;
+  padding-left: .5em;
+  padding-right: .5em;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  transition: height .25s ease;
 }
 
 #extractTab>.queue .item .info .details .title {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size: 1.3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.3em;
 }
 
 #extractTab>.queue .item .info .details .status {
-    text-align: right;
-    color: #AAAF;
-    font-size: 1em;
-    line-height: 1.5em;
-    flex-shrink: 0;
+  text-align: right;
+  color: #AAAF;
+  font-size: 1em;
+  line-height: 1.5em;
+  flex-shrink: 0;
 }
 
 #extractTab>.queue .item .info .details .status .h1 {
-    font-size: 1.6em;
+  font-size: 1.6em;
 }
 
 #extractTab>.queue .item .info .controls {
-    display: flex;
-    justify-content: center;
-    height: 0;
-    gap: .25em;
-    transition: height .25s ease;
-    /*TODO*/
+  display: flex;
+  justify-content: center;
+  height: 0;
+  gap: .25em;
+  transition: height .25s ease;
+  /*TODO*/
 }
 
 #extractTab>.queue .item:hover .info .controls {
-    filter: drop-shadow(0px 0px 4px black);
-    height: 2em;
+  filter: drop-shadow(0px 0px 4px black);
+  height: 2em;
 }
 
 #extractTab>.queue .item .info .controls .control {
-    pointer-events: none;
-    width: 1.5em;
-    color: #AAA8;
-    transition: all .1s ease;
-    will-change: transform;
+  pointer-events: none;
+  width: 1.5em;
+  color: #AAA8;
+  transition: all .1s ease;
+  will-change: transform;
 }
 
 #extractTab>.queue .item .info .controls .control:hover {
-    color: #AAAB;
-    transform: scale(1.1);
+  color: #AAAB;
+  transform: scale(1.1);
 }
 
 #extractTab>.queue .item .info .controls .control:active {
-    color: #AAAE;
-    transform: scale(1.3);
+  color: #AAAE;
+  transform: scale(1.3);
 }
 
 #extractTab>.queue .item:hover .info .controls .control {
-    pointer-events: inherit;
+  pointer-events: inherit;
 }
 
 #extractTab>.queue .item:not(.show) .info * {
-    height: 0 !important;
-    /*collapse everything inside .info*/
+  height: 0 !important;
+  /*collapse everything inside .info*/
 }
 
 #extractTab>.queue .item .flash-bar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(1rad, transparent 45%, #FFF8 50%, transparent 55%);
-    background-size: 500%;
-    background-position: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(1rad, transparent 45%, #FFF8 50%, transparent 55%);
+  background-size: 500%;
+  background-position: 0;
 }
 
 #extractTab>.queue .item .flash-bar.flash {
-    background-position-x: 100% !important;
-    transition: background-position 1s cubic-bezier(0, 0.75, 1, 0.25) !important;
+  background-position-x: 100% !important;
+  transition: background-position 1s cubic-bezier(0, 0.75, 1, 0.25) !important;
 }
 
 #extractTab>.queue .item .background {
-    position: absolute;
-    left: -5%;
-    bottom: -25%;
-    width: 110%;
-    height: 150%;
-    background-size: 125%;
-    background-color: #FFF;
-    background-blend-mode: multiply;
-    background-position-x: center;
-    filter: blur(3px);
-    transition: 1s;
+  position: absolute;
+  left: -5%;
+  bottom: -25%;
+  width: 110%;
+  height: 150%;
+  background-size: 125%;
+  background-color: #FFF;
+  background-blend-mode: multiply;
+  background-position-x: center;
+  filter: blur(3px);
+  transition: 1s;
 }
 
 #extractTab>.queue .item .background.has-image {
-    background-color: #555;
-    /* first Init, then Loop */
-    animation: extractTabItemBackgroundLoop 8s cubic-bezier(0.30, 0, 0.70, 1) infinite alternate, extractTabItemBackgroundInit 8s cubic-bezier(0.30, 0, 0.70, 1) 1;
-    animation-play-state: paused;
+  background-color: #555;
+  /* first Init, then Loop */
+  animation: extractTabItemBackgroundLoop 8s cubic-bezier(0.30, 0, 0.70, 1) infinite alternate, extractTabItemBackgroundInit 8s cubic-bezier(0.30, 0, 0.70, 1) 1;
+  animation-play-state: paused;
 }
 
 @keyframes extractTabItemBackgroundInit {
-    from {
-        background-position-y: 40%
-    }
+  from {
+    background-position-y: 40%
+  }
 
-    to {
-        background-position-y: 80%
-    }
+  to {
+    background-position-y: 80%
+  }
 }
 
 @keyframes extractTabItemBackgroundLoop {
-    from {
-        background-position-y: 20%
-    }
+  from {
+    background-position-y: 20%
+  }
 
-    to {
-        background-position-y: 80%
-    }
+  to {
+    background-position-y: 80%
+  }
 }
 
 #extractTab>.queue .item:hover .background.has-image {
-    background-color: #777;
-    background-size: 100%;
-    animation-play-state: running;
+  background-color: #777;
+  background-size: 100%;
+  animation-play-state: running;
 }
 
 #extractTab>.queue .item .background.no-image {
-    background-color: hsla(var(--base-color-h), var(--base-color-s), calc(var(--base-color-l)/3), 1);
+  background-color: hsla(var(--base-color-h), var(--base-color-s), calc(var(--base-color-l)/3), 1);
 }
 
 .tab.show {
-    top: 0 !important;
-    opacity: 1 !important;
+  top: 0 !important;
+  opacity: 1 !important;
 }
 
 /* loading spinner */
 
 .loading {
-    opacity: 0;
-    margin: 0px;
-    width: 16px;
-    height: 16px;
-    border: 4px solid transparent;
-    border-top-color: hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .8);
-    border-radius: 50%;
-    transition: .5s;
-    pointer-events: none;
-    animation: loading-anim 5s cubic-bezier(0.5, -1.5, 0.5, 2.5) infinite;
+  opacity: 0;
+  margin: 0px;
+  width: 16px;
+  height: 16px;
+  border: 4px solid transparent;
+  border-top-color: hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .8);
+  border-radius: 50%;
+  transition: .5s;
+  pointer-events: none;
+  animation: loading-anim 5s cubic-bezier(0.5, -1.5, 0.5, 2.5) infinite;
 }
 
 .loading.show {
-    opacity: 1;
+  opacity: 1;
 }
 
 @keyframes loading-anim {
-    0% {
-        transform: rotate(4turn);
-        border-top-color: hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .25);
-        border-bottom-color: hsl(var(--base-color-h), var(--base-color-s), var(--base-color-l));
-    }
+  0% {
+    transform: rotate(4turn);
+    border-top-color: hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .25);
+    border-bottom-color: hsl(var(--base-color-h), var(--base-color-s), var(--base-color-l));
+  }
 
-    33% {
-        transform: rotate(3turn);
-    }
+  33% {
+    transform: rotate(3turn);
+  }
 
-    50% {
-        border-top-color: hsl(var(--base-color-h), var(--base-color-s), var(--base-color-l));
-        border-bottom-color: hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .25);
-    }
+  50% {
+    border-top-color: hsl(var(--base-color-h), var(--base-color-s), var(--base-color-l));
+    border-bottom-color: hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .25);
+  }
 
-    66% {
-        transform: rotate(1turn);
-    }
+  66% {
+    transform: rotate(1turn);
+  }
 
-    100% {
-        transform: rotate(0turn);
-        border-top-color: hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .25);
-        border-bottom-color: hsl(var(--base-color-h), var(--base-color-s), var(--base-color-l));
-    }
+  100% {
+    transform: rotate(0turn);
+    border-top-color: hsla(var(--base-color-h), var(--base-color-s), var(--base-color-l), .25);
+    border-bottom-color: hsl(var(--base-color-h), var(--base-color-s), var(--base-color-l));
+  }
 }
 
 /* scrollbar */
 
 ::-webkit-scrollbar {
-    display: block;
+  display: block;
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: hsla(var(--base-color-h), calc(var(--base-color-s)*.5), var(--base-color-l), .5);
-    background-clip: content-box;
-    border: 0 solid transparent;
-    border-left-width: .8rem;
-    border-top-width: .2rem;
-    border-bottom-width: .2rem;
+  background: hsla(var(--base-color-h), calc(var(--base-color-s)*.5), var(--base-color-l), .5);
+  background-clip: content-box;
+  border: 0 solid transparent;
+  border-left-width: .8rem;
+  border-top-width: .2rem;
+  border-bottom-width: .2rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: hsla(var(--base-color-h), calc(var(--base-color-s)), var(--base-color-l), .5);
-    background-clip: content-box;
+  background: hsla(var(--base-color-h), calc(var(--base-color-s)), var(--base-color-l), .5);
+  background-clip: content-box;
 }
 
 /* Utils */
 
 .d-flex {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
