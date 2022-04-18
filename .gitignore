@@ -3,3 +3,4 @@ build
 app/data/*
 !app/data/*.default.db3
 .vscode
+*.log

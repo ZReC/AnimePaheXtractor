@@ -1,6 +1,6 @@
 {
   "name": "animepahextractor",
-  "version": "2.0.0",
+  "version": "2.1.1",
   "description": "intended to manage cute video files",
   "main": "main.js",
   "scripts": {
