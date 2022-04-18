@@ -210,8 +210,8 @@ class Serie {
     await this.db.update('series', `id = ${+id}`, ...keyval);
   }
 
-  static create(id, details) {
-    return this.siblings[id] = new Serie(id, details);
+  static create(details) {
+    return this.siblings[details.id] = new Serie(details);
   }
 
   static getDetailsFromID(id) {
@@ -233,21 +233,20 @@ class Serie {
     this._b64Poster = `data:image/*;base64,${value.toString('base64')}`;
   }
 
-  constructor(id, details) {
-    /* -
-    Details in use:
-        episodes, id, poster, title,
-        type, year, season, status,
-    Not in use for now:
-        relevance, score, session, slug,
-    - */
+  constructor({ id, session, title = undefined, episodes = NaN, poster = undefined, type = undefined, year = undefined, season = undefined, status = undefined }) {
+    /**
+     * details that were omitted: relevance, score, slug
+     */
 
     /**
      * @type {number} serie unique ID */
-    this.id = +id;
+    this.id = id;
+    /**
+     * @type {string} serie session */
+    this.session = session;
     /**
      * @type {Object} */
-    this.details = details;
+    this.details = { title, episodes, poster, type, year, season, status };
     /**
      * @type {Map<number, number | {session: string, page: number}>}
      * Each page contains a number of episodes.
@@ -302,7 +301,7 @@ class Serie {
     if (page == undefined || page.expires < Date.now()) {
       const _tmp =
         JSON.parse(await apRequest.fetch(
-          `https://animepahe.com/api?m=release\&id=${this.id}\&sort=episode_asc\&page=${pageNumber}`)
+          `https://animepahe.com/api?m=release\&id=${this.session}\&sort=episode_asc\&page=${pageNumber}`)
         );
 
       for (const v of ['total', 'per_page', 'last_page', 'data']) {
@@ -442,7 +441,7 @@ class Serie {
    */
   async fetchOptions(session) {
     const options = [];
-    const buffer = await apRequest.fetch(`https://animepahe.com/api?m=links\&id=${this.id}\&session=${session}\&p=kwik`);
+    const buffer = await apRequest.fetch(`https://animepahe.com/api?m=links\&id=${this.session}\&session=${session}\&p=kwik`);
 
     for (const v of JSON.parse(buffer).data)
       for (const q in v) {
@@ -505,11 +504,8 @@ class SearchResult {
       this.entries = [];
 
       data.forEach(v => {
-        const { id } = v;
-        delete v.id;
-
         // store/update serie
-        this.entries.push(Serie.create(id, v));
+        this.entries.push(Serie.create(v));
       });
     } else
       throw Error('Can\'t create empty SearchResult');
