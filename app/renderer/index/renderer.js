@@ -127,7 +127,7 @@ class OptionDropdown {
   /**
    * @param {Array} items 
    */
-  setup(items) {
+  setup(items, middle) {
     this.eHTML.innerHTML = '';
     this.eHTML.classList.remove('deploy');
 
@@ -139,7 +139,10 @@ class OptionDropdown {
       this.eHTML.appendChild(item);
     }
 
-    this.currentItem = this.eHTML.firstChild;
+    this.currentItem =
+      middle
+        ? this.eHTML.childNodes[parseInt((this.eHTML.childNodes.length-1) / 2) || 0]
+        : this.eHTML.firstChild;
   }
 
   /**
@@ -551,7 +554,7 @@ class ExtractDialog {
 
       const { audio, quality } = this.extractOptions;
       audio.setup(audios);
-      quality.setup(qualities);
+      quality.setup(qualities, true);
     }
   }
 
